@@ -106,10 +106,10 @@
                 while (!placed && !board.isFull()) {
                     if (board.isEmpty(pos)) {
                         board.positions[pos] = IA.chip;
-                        placed = true
+                        placed = true;
                     }
                     else {
-                        pos = Math.floor(Math.random() * board.positions.length)
+                        pos = Math.floor(Math.random() * board.positions.length);
                     }
                 }
             }
@@ -197,15 +197,16 @@
                 var positions = board.positions;
                 var player = "<span>X</span>";
                 var enemy = "<span>O</span>";
+                var empty = "<span>--</span>";
 
                 if (positions[x] == 1) {
-                    return player
+                    return player;
                 }
                 else if (positions[x] == 2) {
-                    return enemy
+                    return enemy;
                 }
                 else {
-                    return "<span>--</span>";
+                    return empty;
                 }
             }
 
