@@ -1,0 +1,40 @@
+            #main{
+                font-family: 'Comic Sans MS';
+                width: 100%;
+                text-align:center;
+            }
+            #board {
+                margin: auto;
+                border: 1px solid black;
+                text-align: center;
+                width: 150px;
+                height: 150px;
+                border-radius: 10px;
+            }
+            .btn-formated {
+                font-family: 'Comic Sans MS';
+                background: white;
+                border: 1px solid black;
+                border-radius: 20px;
+                cursor: pointer
+            }
+            .btn-formated:hover{
+
+            }
+            .btn-formated-move {
+                font-family: 'Comic Sans MS';
+                background: white;
+                border: 1px solid black;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                cursor: pointer
+            }
+            .btn-formated-move:hover {
+
+            }
+            .text-formated {
+                font-family: 'Comic Sans MS';
+                border: 1px solid black;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
