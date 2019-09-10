@@ -78,6 +78,7 @@
             // restart game
             function restart() {
                 gameStarted = false;
+                board.gameFinished = false;
                 table.innerHTML = "";
                 text.innerHTML = "";
                 IA.starts = false;
