@@ -181,12 +181,12 @@
                     }
                     if (iaMove && !board.gameFinished) {
                         IA.move();
-                        paint();
                         iaMove = false;
                         // check for winner again
                         if (winnerHandler()) {
                             board.gameFinished = true;
                         }
+                        paint();
                     }
                 }
                 else { text.innerHTML = "<p>Select a number first!</p>"; }
