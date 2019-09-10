@@ -166,7 +166,7 @@
                 if (x != null) {
                     var placed = false;
                     var iaMove = false;
-                    if (!placed) {
+                    if (!placed && !board.gameFinished) {
                         if (board.isEmpty(x)) {
                             board.positions[x] = player.chip;
                             placed = true;
