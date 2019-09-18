@@ -3,9 +3,9 @@
 window.onload = function () {
     paint();
     document.getElementById("start").onclick = function () { start(); };
-    document.getElementById("restart").onclick = function () { restart();};
+    document.getElementById("restart").onclick = function () { restart(); };
     document.getElementById("move").onclick = function () { var number = document.getElementById("number").value; move(number); };
-}
+};
 
 // variables
 var text = document.getElementById("text");
@@ -14,32 +14,32 @@ var gameStarted = false;
 
 // objects
 var board = {
-    positions : [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        isEmpty: function (x) {
-        if (this.positions[x] == 0) { return true } else { return false }
+    positions: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    isEmpty: function (x) {
+        if (this.positions[x] === 0) { return true } else { return false }
     },
     isFull: function () {
         var aux = 0;
         for (var i = 0; i < this.positions.length; i++) {
-            if (this.isEmpty(i) != true) {aux ++}
+            if (this.isEmpty(i) !== true) { aux++ }
         }
-        if (aux == this.positions.length) { this.gameFinished = true; return true } else {return false}
+        if (aux === this.positions.length) { this.gameFinished = true; return true } else { return false }
     },
     gameFinished: false
-    }
+};
 
 var player = {
     name: "Player",
     chip: 1,
     starts: false
-}
+};
 
 var IA = {
     name: "PC",
     chip: 2,
     starts: false,
-    move: function () {moveIA()}
-}
+    move: function () { moveIA(); }
+};
 
 // functions
 function start() {
@@ -75,7 +75,7 @@ function restart() {
 function movements() {
     var i = Math.floor(Math.random() * 2);
 
-    if (i == 1) {
+    if (i === 1) {
         player.starts = true;
     } else {
         IA.starts = true;
@@ -99,12 +99,10 @@ function moveIA() {
     }
 }
 
-/**
-* Board positions
-* 0, 1, 2
-* 3, 4, 5
-* 6, 7, 8
-* */
+// Board positions
+// 0, 1, 2
+// 3, 4, 5
+// 6, 7, 8
 function checker() {
     var pos = board.positions;
     //check rows
@@ -123,8 +121,8 @@ function checker() {
 }
 
 function checkRow(pos1, pos2, pos3) {
-    if (pos1 != 0 && pos2 != 0 && pos3 != 0) {
-        if ((pos1 == pos2) && (pos2 == pos3)) {
+    if (pos1 !== 0 && pos2 !== 0 && pos3 !== 0) {
+        if (pos1 === pos2 && pos2 === pos3) {
             return true;
         } else {
              return false;
@@ -136,10 +134,10 @@ function checkRow(pos1, pos2, pos3) {
 
 // checks for winner
 function winnerHandler() {
-    if (checker() == 1) {
+    if (checker() === 1) {
         text.innerHTML = "<p>" + player.name + " wins!</p>";
         return true;
-    } else if (checker() == 2) {
+    } else if (checker() === 2) {
         text.innerHTML = "<p>" + IA.name + " wins!</p>";
         return true;
     } else {
@@ -148,7 +146,7 @@ function winnerHandler() {
 }
 
 function move(x) {
-    if (x != null) {
+    if (x !== null) {
         var placed = false;
         var iaMove = false;
         if (!placed && !board.gameFinished) {
@@ -184,10 +182,10 @@ function getChip(x) {
     var enemy = "<span>O</span>";
     var empty = "<span>--</span>";
 
-    if (positions[x] == 1) {
+    if (positions[x] === 1) {
         return player;
     }
-    else if (positions[x] == 2) {
+    else if (positions[x] === 2) {
         return enemy;
     }
     else {
