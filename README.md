@@ -1,4 +1,4 @@
 # TicTacToe-JS
-Tic tac toe game made with JavaScript
+new version
 
-https://raw.githack.com/IsmaFuentes/TicTacToe-JS/master/game.html
+https://raw.githack.com/IsmaFuentes/TicTacToe-JS/master/index.html
